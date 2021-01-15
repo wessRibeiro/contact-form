@@ -25,8 +25,11 @@ $ sudo composer install
 $ sudo php artisan key:generate (se não rodar no install)
 $ sudo php artisan storage:link
 ```
-- crie um banco com nome `netshowme`
-
+- crie um banco de dados com nome `netshowme`
+```sh 
+create database netshowme;
+use netshowme;
+```
 ## migration
 ```sh 
 $ php artisan migrate
