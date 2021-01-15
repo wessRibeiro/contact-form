@@ -15,7 +15,7 @@ senha: netshowme
 
 ### Instalação
 ```sh
-dentro da pasta, nivel raiz:
+dentro da pasta raiz:
 $ sudo chmod 777 -R storage
 $ sudo chmod 777 -R bootstrap/cache
 $ sudo chmod 777 -R storage/logs
