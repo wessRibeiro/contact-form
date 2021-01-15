@@ -27,8 +27,8 @@ $ sudo php artisan storage:link
 ```
 - crie um banco de dados com nome `netshowme`
 ```sh 
-create database netshowme;
-use netshowme;
+$ create database netshowme;
+$ use netshowme;
 ```
 ## migration
 ```sh 
