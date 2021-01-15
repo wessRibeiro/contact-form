@@ -30,7 +30,7 @@ $ sudo php artisan storage:link
 $ create database netshowme;
 $ use netshowme;
 ```
-## migration
+## Migration
 ```sh 
 $ php artisan migrate
 ```
@@ -44,7 +44,7 @@ $ php artisan migrate
 $ php artisan test
 ```
 
-## rodando o projeto
+## Rodando o projeto
 ```sh 
 $ php artisan serve
 esperado o seguinte localhost: http://127.0.0.1:8000    
