@@ -13,7 +13,24 @@ senha: netshowme
 | MYSQL | 8.0.21 ou maior |  |
 | Laravel | 8.0 |
 
-para deixar a fila de email esperando worker no .env
-QUEUE_CONNECTION=database
-abra uma aba do terminal e rode o comando abaixo para acionar o worker:
-php artisan queue:work --queue=emails
+### Instalação
+```sh
+dentro da pasta, nivel raiz:
+$ sudo chmod 777 -R storage
+$ sudo chmod 777 -R bootstrap/cache
+$ sudo chmod 777 -R storage/logs
+$ sudo cp .env.local .env
+$ sudo composer selfupdate
+$ sudo composer install
+$ sudo php artisan key:generate (se não rodar no install)
+$ sudo php artisan storage:link
+```
+## migration
+```sh 
+$ php artisan migrate
+```
+
+## Queues
+- No arquivo `.env` está como `QUEUE_CONNECTION=sync` para não precisar rodar worker. Caso queira mudar para `QUEUE_CONNECTION=database`, terá que rodar o seguinte comando php `artisan queue:work --queue=emails` pra rodar a fila "email" e executar os jobs que entrar nela.
+
+
