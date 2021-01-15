@@ -9,6 +9,7 @@ namespace App\Http\Resources\Api\V1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
+use Illuminate\Support\Arr;
 
 /**
  * Created by Weslley Ribeiro
@@ -75,6 +76,15 @@ class BaseResourceApi extends JsonResource
      */
     public function toArray($request)
     {
-        return $request->errors ?? $request->all();
+        //se for arquivo retorna o nome do arquivo, não o objeto inteiro
+        $files = $request->allFiles();
+        $data = collect($request->all())->map(function($value, $key) use ($files, $request){
+            if((Arr::exists($files, $key))){
+                return $request->file($key)->getClientOriginalName();
+            }
+            return $value;
+        });
+
+        return $request->errors ?? $data->toArray();
     }
 }

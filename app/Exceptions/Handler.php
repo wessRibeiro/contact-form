@@ -55,6 +55,7 @@ class Handler extends ExceptionHandler
                 $request->message = ($exception->getMessage() != '') ? $exception->getMessage()
                     : Response::$statusTexts[Response::HTTP_BAD_REQUEST];
             }
+
             return new BaseResourceApi($request,$request->code,$request->message);
         });
     }

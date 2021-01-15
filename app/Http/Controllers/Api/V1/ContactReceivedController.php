@@ -40,6 +40,8 @@ class ContactReceivedController extends Controller
     public function store(ContactReceivedRequest $request)
     {
         $this->service->store($request);
+
         return new BaseResourceApi($request, Response::HTTP_CREATED, __('api.store.success'));
+
     }
 }

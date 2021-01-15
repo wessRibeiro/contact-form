@@ -30,11 +30,15 @@ class ContactReceived extends Mailable implements ShouldQueue
     /**
      * Create a new message instance.
      * ContactReceived constructor.
-     * @param ContactReceivedResource $contactReceived
+     * @param $contactReceived
      */
-    public function __construct(ContactReceivedResource $contactReceived)
+    public function __construct($contactReceived)
     {
-        $this->contactReceived = $contactReceived->jsonSerialize();
+        if($contactReceived instanceof ContactReceivedResource) {
+            $this->contactReceived = $contactReceived->jsonSerialize();
+        }else{
+            $this->contactReceived = $contactReceived;
+        }
     }
 
     /**
@@ -48,6 +52,6 @@ class ContactReceived extends Mailable implements ShouldQueue
     {
         return $this->view('emails.contactReceived')
             ->subject('Contato recebido - página de contato Netshow.me')
-            ->attachFromStorage($this->contactReceived['fileUrl']);
+            ->attachFromStorageDisk(env('FILESYSTEM_DRIVER'),$this->contactReceived['fileUrl']);
     }
 }
