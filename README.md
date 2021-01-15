@@ -3,6 +3,11 @@ Por ser uma ferramenta para testes, o e-mail não será efetivamente enviado par
 https://mailtrap.io/
 usu: wess.ribeiro01@gmail.com
 pass: netshowme
+#### Requisitos
+| Required | Version | Ambiente |
+| ------ | ------ | ------ |
+| PHP | 7.2.5 ou maior| memory_limit=-1 (local)  |
+| MYSQL | 8.0.21 ou maior |  |
 
 para deixar a fila de email esperando worker no .env
 QUEUE_CONNECTION=database
