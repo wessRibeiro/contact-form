@@ -41,7 +41,7 @@ $ php artisan migrate
 $ php artisan test
 ```
 
-##rodando o projeto
+## rodando o projeto
 ```sh 
 $ php artisan serve
 esperado o seguinte localhost: http://127.0.0.1:8000    
