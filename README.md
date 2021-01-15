@@ -3,12 +3,12 @@ Por ser uma ferramenta para testes, o e-mail não será efetivamente enviado par
 https://mailtrap.io/
 usu: wess.ribeiro01@gmail.com
 pass: netshowme
-#### Requisitos
+#### Ferramentas utilizadas
 | Required | Version | Ambiente |
 | ------ | ------ | ------ |
-| PHP | 7.2.5 ou maior| memory_limit=-1 (local)  |
+| PHP | 7.2.5 ou maior|
 | MYSQL | 8.0.21 ou maior |  |
-
+| Laravel | 8.0 |
 para deixar a fila de email esperando worker no .env
 QUEUE_CONNECTION=database
 abra uma aba do terminal e rode o comando abaixo para acionar o worker:
